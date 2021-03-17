@@ -20,14 +20,16 @@ class MateController extends Controller
             <br>4. Framework de backend conozco los principales pero nunca los he utilizado en algún proyecto
             <br>5. He utilizado Bootstrap y Materialize para frontend"
         ],
-        "A01265529" => [
+        "A01209400" => [
             "photoDir" => "https://historia-arte.com/_/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbSI6WyJcL2FydHdvcmtcL2ltYWdlRmlsZVwvMjAxOC1vbmUtYmFzcXVpYXQtOTc2MS1iYXNxdWlhdC11bnRpdGxlZC1oaWdoLXJlcy0yMDAwdy5qcGciLCJyZXNpemUsODAwIl19.qLG3D-GgPEc2XtGFNDjruT/ppUoZHNMWT45oyt5l9GQA.jpg",
             "name" => "Royer Arenas Donnet",
-            "matricula" => "A01265529",
+            "matricula" => "A01209400",
             "descripcion" => "
-            3. Medios de comunicación con profesores y compañeros Slack, whatsapp, remind y correo electrónico
-            4. Framework de backend conozco los principales pero nunca los he utilizado en algún proyecto
-            5. He utilizado Bootstrap y Materialize para frontend"
+            <br>1. Git+GitHub para control de versiones.
+            <br>2. Para gestión de proyectos Trello y JIRA.
+            <br>3. Medios de comunicación con profesores y compañeros Slack, whatsapp, remind y correo electrónico
+            <br>4. Solo un poco de React como framework de front.
+            <br>5. He utilizado lo tipico de JQuery,bootstrap,Materialize y un poco de Bulma."
         ],
         "A01420666" => [
             "photoDir" => "https://observer.com/wp-content/uploads/sites/2/2020/06/Jean-Michel-Basquiat-Untitled-Head.jpg?quality=80",

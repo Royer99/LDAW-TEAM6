@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class BidSeeder extends Seeder
 {
@@ -13,6 +14,10 @@ class BidSeeder extends Seeder
      */
     public function run()
     {
-        //
+        /*
+        DB::table('bids')->insert([
+            
+        ]);
+        */
     }
 }

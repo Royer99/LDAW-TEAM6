@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             PlatformSeeder::class,
+            TitleSeeder::class,
         ]);
     }
 }

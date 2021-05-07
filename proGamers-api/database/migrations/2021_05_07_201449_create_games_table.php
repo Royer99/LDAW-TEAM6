@@ -21,7 +21,7 @@ class CreateGamesTable extends Migration
             ->onDelete('cascade');
             $table->foreignId('platform_id')->constrained()
             ->onUpdate('cascade')
-            ->onDelete('cascade');;
+            ->onDelete('cascade');
             $table->string('description');
         });
     }

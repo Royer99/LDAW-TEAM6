@@ -14,9 +14,9 @@ class CreateBidsTable extends Migration
     public function up()
     {
         Schema::create('bids', function (Blueprint $table) {
-            $table->date();
+            $table->date('date');
             $table->id();
-            $table->foreignId('Game_id')->constrained()
+            $table->foreignId('game_id')->constrained()
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->foreignId('user_id')->constrained()

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Title;
 
 class TitleController extends Controller
 {
@@ -36,7 +37,7 @@ class TitleController extends Controller
     {
         $_title=["title"=>$request->_title,
                 "description"=>$request->_description,
-                "Edition"=>$request->_edition,
+                "edition"=>$request->_edition,
                 "version"=>$request->_version,
                 "image"=>$request->_image];
         $title=Title::insertTitle($_title);

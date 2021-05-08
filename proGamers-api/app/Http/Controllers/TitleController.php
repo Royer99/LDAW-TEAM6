@@ -25,7 +25,7 @@ class TitleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Title::insertTitle($request->title);
     }
 
     /**

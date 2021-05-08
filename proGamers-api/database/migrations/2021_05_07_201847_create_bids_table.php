@@ -14,12 +14,15 @@ class CreateBidsTable extends Migration
     public function up()
     {
         Schema::create('bids', function (Blueprint $table) {
-            $table->date('date');
             $table->id();
-            $table->foreignId('game_id')->constrained()
+            $table->date('date');
+            $table->foreignId('owner_game')->constrained('games')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->foreignId('user_id')->constrained()
+            $table->foreignId('bidder_game')->constrained('games')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreignId('bidder')->constrained('users')
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->char('status');

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Title;
 use Illuminate\Http\Request;
+use App\Models\Title;
 
 class TitleController extends Controller
 {
@@ -18,6 +18,16 @@ class TitleController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view("registarTitulo");
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -25,16 +35,33 @@ class TitleController extends Controller
      */
     public function store(Request $request)
     {
-        return Title::insertTitle($request->title);
+        $_title=["title"=>$request->_title,
+                "description"=>$request->_description,
+                "edition"=>$request->_edition,
+                "version"=>$request->_version,
+                "image"=>$request->_image];
+        $title=Title::insertTitle($_title);
+        return $title;        
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Title  $title
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Title $title)
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
         //
     }
@@ -43,10 +70,10 @@ class TitleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Title  $title
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Title $title)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -54,10 +81,10 @@ class TitleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Title  $title
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Title $title)
+    public function destroy($id)
     {
         //
     }

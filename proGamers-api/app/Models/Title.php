@@ -24,4 +24,9 @@ class Title extends Model
             }
     }
 
+    public static function getTitles(){
+        $titles = self::all();
+        return($titles);
+    }
+
 }

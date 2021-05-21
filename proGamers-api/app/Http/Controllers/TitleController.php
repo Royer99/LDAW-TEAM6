@@ -14,7 +14,7 @@ class TitleController extends Controller
      */
     public function index()
     {
-        //
+        return Title::getTitles();
     }
 
     /**

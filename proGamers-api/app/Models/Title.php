@@ -10,19 +10,7 @@ class Title extends Model
 {
     //use HasFactory;
 
-    
-    public static function insertTitle($title){
-        try{
-            $status=DB::table('titles')->insert(['title'=>$title["title"], 
-                                            'description'=>$title["description"],
-                                            'edition'=>$title["edition"],
-                                            'version'=>$title["version"],
-            ]);
-            
-            }catch(\Illuminate\Database\QueryException $ex){ 
-                return($ex->getMessage()); 
-            }
-    }
+    public $timestamps = false;
 
     public static function getTitles(){
         $titles = self::all();

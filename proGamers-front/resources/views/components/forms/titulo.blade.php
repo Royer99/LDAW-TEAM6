@@ -1,42 +1,42 @@
-<form onsubmit="event.preventDefault();" >
+<form action='{{route('title.store')}}' enctype="multipart/form-data" method="post">
+    @csrf
     <div class="row">
         <div class="col-9">
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Titulo</label>
-                <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <label for="Titulo" class="form-label">Titulo</label>
+                <input type="text" class="form-control" id="title" name="title" required>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-9">
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Descripcion</label>
-                <input type="text" class="form-control" id="description">
+                <label for="Descripcion" class="form-label">Descripcion</label>
+                <input type="text" class="form-control" id="description" name="description" required>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-9">
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Edicion</label>
-                <input type="text" class="form-control" id="edition">
+                <label for="Edicion" class="form-label">Edicion</label>
+                <input type="text" class="form-control" id="edition" name="edition" required>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-9">
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Version</label>
-                <input type="text" class="form-control" id="vesion">
+                <label for="Version" class="form-label">Version</label>
+                <input type="text" class="form-control" id="vesion" name="version" required>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-9">
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Image</label>
-                <input type="text" class="form-control" id="image">
+                <label for="Image" class="form-label">Image</label>
+                <input type="file" class="form-control" id="image" name="image" required>
             </div>
         </div>
     </div>

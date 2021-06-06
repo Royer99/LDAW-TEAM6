@@ -22,7 +22,6 @@ class Title extends Model
 
     public static function getTitles(){
         $response=Http::get('http://127.0.0.1:8001/api/title');
-        //echo($response);
         return $response->json();
     }
 }

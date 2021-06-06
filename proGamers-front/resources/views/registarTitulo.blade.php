@@ -9,9 +9,12 @@
     <!--sidebar-->
     <div class="container-fluid">
     <x-sidebar/>
-    <!--form-->
+    
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="container-fluid">
+            <h2>Registro de titulo</h2>
+            <br><br>
+            <!--form-->
             <x-forms.titulo/>
         </div>
     </main>

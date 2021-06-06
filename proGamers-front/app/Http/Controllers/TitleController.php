@@ -26,13 +26,11 @@ class TitleController extends Controller
             $titlepath=explode("public",$title['image']);
             if(count($titlepath)>1){
                 $titlex['image']=$titlepath[1];
-                //dd($title['image']);
             }else{
                 $titlex['image']=$title['image'];
             }
             $titlesx[]=$titlex;
         }
-        //dd($titlesx);
         return view("indexTitles",["titles"=>$titlesx]);
     }
 

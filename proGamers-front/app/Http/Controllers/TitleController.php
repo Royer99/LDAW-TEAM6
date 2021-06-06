@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Title;
+use Illuminate\Support\Facade\Validator;
 
 class TitleController extends Controller
 {
@@ -35,13 +36,27 @@ class TitleController extends Controller
      */
     public function store(Request $request)
     {
+
+        $validator=Validator::make($request->all(),[
+           'title'=>'required|max:255'
+           'description'=>'required|max:255'
+           'edition'=>'required|max:255'
+           'version'=>'required|max:255'
+           'image'=>'required'
+        ]);
+        
+        if($validator->fails()){
+            return redirect('title/create')
+                    ->withErrors($validator)
+                    ->withInput();
+        }
+
         $imageUrl=$request->file('image')->store('TitleImage');
         $title=["title"=>$request->title,
                 "description"=>$request->description,
                 "edition"=>$request->edition,
                 "version"=>$request->version,
                 "image"=>$imageUrl];
-        dd($title);
         $title=Title::insertTitle($title);
         return $title;        
     }

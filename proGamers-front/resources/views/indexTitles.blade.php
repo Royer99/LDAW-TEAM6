@@ -12,6 +12,9 @@
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="container-fluid">
         <div class="row row-cols-1 row-cols-md-4 g-4">
+        @if(empty($titles))
+            <h5>No existen titulos para mostrar</h5>
+        @endif
         @foreach ($titles as $titlex)
         <div class="col">
             <div class="card card h-100" style="width: 18rem;">

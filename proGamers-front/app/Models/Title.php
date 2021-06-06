@@ -14,8 +14,9 @@ class Title extends Model
         //$token = session('token');
         //env('API_URL').
         $response=Http::post('http://127.0.0.1:8001/api/title',['title'=>$title]);
-        echo($response);
-        dd();
-        return $response->json();
+        $wasSuccessful = ($response->status() == 200);
+        $message = $response->json()['message'];
+        return array($wasSuccessful, $message);
+
     }
 }

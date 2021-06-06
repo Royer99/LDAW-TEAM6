@@ -32,7 +32,12 @@ class TitleController extends Controller
         $title->version=$request->title['version'];
         $title->image=$request->title['image'];
         $title->save();
-        return $title;
+        return response([
+            "id" => $title->id,
+            "success" => true,
+            "message" => "Se ha registrado el nuevo titulo correctamente."
+        ], 200);
+
     }
 
     /**

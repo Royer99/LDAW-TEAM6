@@ -58,6 +58,18 @@ class TitleController extends Controller
                 "version"=>$request->version,
                 "image"=>$imageUrl];
         $title=Title::insertTitle($titleData);    
+        
+        $wasSuccessful = $title[0];
+        $message = $title[1];
+
+        if ($wasSuccessful) {
+            return redirect()->route('title')
+                    ->with('success', $message);
+        };
+
+        return redirect()->route('title.create')
+            ->with('error', $message);
+
     }
 
     /**

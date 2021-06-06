@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Title;
-use Illuminate\Support\Facade\Validator;
+use Illuminate\Support\Facades\Validator;
 
 class TitleController extends Controller
 {
@@ -38,10 +38,10 @@ class TitleController extends Controller
     {
 
         $validator=Validator::make($request->all(),[
-           'title'=>'required|max:255'
-           'description'=>'required|max:255'
-           'edition'=>'required|max:255'
-           'version'=>'required|max:255'
+           'title'=>'required|max:255',
+           'description'=>'required|max:255',
+           'edition'=>'required|max:255',
+           'version'=>'required|max:255',
            'image'=>'required'
         ]);
         
@@ -52,13 +52,12 @@ class TitleController extends Controller
         }
 
         $imageUrl=$request->file('image')->store('TitleImage');
-        $title=["title"=>$request->title,
+        $titleData=["title"=>$request->title,
                 "description"=>$request->description,
                 "edition"=>$request->edition,
                 "version"=>$request->version,
                 "image"=>$imageUrl];
-        $title=Title::insertTitle($title);
-        return $title;        
+        $title=Title::insertTitle($titleData);    
     }
 
     /**

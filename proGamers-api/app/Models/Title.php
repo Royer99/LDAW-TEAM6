@@ -17,11 +17,12 @@ class Title extends Model
                                             'description'=>$title["description"],
                                             'edition'=>$title["edition"],
                                             'version'=>$title["version"],
+                                            'image'=>$title["image"],
             ]);
-            
-            }catch(\Illuminate\Database\QueryException $ex){ 
-                return($ex->getMessage()); 
-            }
+            return $status;
+        }catch(\Illuminate\Database\QueryException $ex){ 
+            return($ex->getMessage()); 
+        }
     }
 
 }

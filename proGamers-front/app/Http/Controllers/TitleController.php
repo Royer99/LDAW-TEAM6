@@ -13,8 +13,11 @@ class TitleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+        //dd(Title::getTitles());
+        $titles=Title::getTitles();
+        //dd($titles);
+        return view("indexTitles",["titles"=>$titles]);
     }
 
     /**

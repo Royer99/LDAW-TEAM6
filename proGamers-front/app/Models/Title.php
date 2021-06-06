@@ -13,9 +13,14 @@ class Title extends Model
     public static function insertTitle($title){
         //$token = session('token');
         //env('API_URL').
-        echo("en el modelo del front");
         $response=Http::post('http://127.0.0.1:8001/api/title',['title'=>$title]);
         echo($response);
+        return $response->json();
+    }
+
+    public static function getTitles(){
+        $response=Http::get('http://127.0.0.1:8001/api/title');
+        //echo($response);
         return $response->json();
     }
 }

@@ -19,6 +19,7 @@ class CreateTitlesTable extends Migration
             $table->string('description');
             $table->string('edition');
             $table->string('version');
+            $table->string('image');
         });
     }
 

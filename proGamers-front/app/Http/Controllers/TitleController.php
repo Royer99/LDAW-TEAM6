@@ -14,8 +14,24 @@ class TitleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+        $titles=Title::getTitles();
+        $titlesx=[];
+        foreach($titles as $title){
+            $titlex['id']=$title['id'];
+            $titlex['title']=$title['title'];
+            $titlex['description']=$title['description'];
+            $titlex['edition']=$title['edition'];
+            $titlex['version']=$title['version'];
+            $titlepath=explode("public",$title['image']);
+            if(count($titlepath)>1){
+                $titlex['image']=$titlepath[1];
+            }else{
+                $titlex['image']=$title['image'];
+            }
+            $titlesx[]=$titlex;
+        }
+        return view("indexTitles",["titles"=>$titlesx]);
     }
 
     /**
@@ -63,7 +79,7 @@ class TitleController extends Controller
         $message = $title[1];
 
         if ($wasSuccessful) {
-            return redirect()->route('title')
+            return redirect()->route('title.index')
                     ->with('success', $message);
         };
 

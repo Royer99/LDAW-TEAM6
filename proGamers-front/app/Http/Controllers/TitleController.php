@@ -35,12 +35,14 @@ class TitleController extends Controller
      */
     public function store(Request $request)
     {
-        $_title=["title"=>$request->_title,
-                "description"=>$request->_description,
-                "edition"=>$request->_edition,
-                "version"=>$request->_version,
-                "image"=>$request->_image];
-        $title=Title::insertTitle($_title);
+        $imageUrl=$request->file('image')->store('TitleImage');
+        $title=["title"=>$request->title,
+                "description"=>$request->description,
+                "edition"=>$request->edition,
+                "version"=>$request->version,
+                "image"=>$imageUrl];
+        dd($title);
+        $title=Title::insertTitle($title);
         return $title;        
     }
 

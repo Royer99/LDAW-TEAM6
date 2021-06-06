@@ -51,7 +51,7 @@ class TitleController extends Controller
                     ->withInput();
         }
 
-        $imageUrl=$request->file('image')->store('TitleImage');
+        $imageUrl=$request->file('image')->storePublicly('public/TitleImage');
         $titleData=["title"=>$request->title,
                 "description"=>$request->description,
                 "edition"=>$request->edition,

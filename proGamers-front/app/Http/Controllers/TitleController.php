@@ -103,7 +103,7 @@ class TitleController extends Controller
         }else{
             $title['image']=$title['image'];
         }
-        return(view('editTitles',['title'=>$title]));
+        return(view('showTitles',['title'=>$title]));
     }
 
     /**
@@ -114,7 +114,14 @@ class TitleController extends Controller
      */
     public function edit($id)
     {   
-        
+        $title=Title::getById($id);
+        $titlepath=explode("public/",$title['image']);
+        if(count($titlepath)>1){
+            $title['image']=$titlepath[1];
+        }else{
+            $title['image']=$title['image'];
+        }
+        return(view('editTitles',['title'=>$title]));
     }
 
     /**

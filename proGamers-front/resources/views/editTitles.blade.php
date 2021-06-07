@@ -13,14 +13,14 @@
             <h2>Visualizar/Editar Titulo</h2>
             <br><br>
             <!--form-->
-            <form action='{{route('title.update',['title'=>$title['0']['id']])}}' enctype="multipart/form-data" method="post">
+            <form action='{{route('title.update',['title'=>$title['id']])}}' enctype="multipart/form-data" method="post">
                 {{ method_field('PATCH') }}
                 @csrf
                 <div class="row">
                     <div class="col-9">
                         <div class="mb-3">
                             <label for="Titulo" class="form-label">Titulo</label>
-                            <input type="text" class="form-control" id="title" name="title" value="{{$title['0']['title']}}" required>
+                            <input type="text" class="form-control" id="title" name="title" value="{{$title['title']}}" required>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     <div class="col-9">
                         <div class="mb-3">
                             <label for="Descripcion" class="form-label">Descripcion</label>
-                            <input type="text" class="form-control" id="description" name="description" value="{{$title['0']['description']}}" required>
+                            <input type="text" class="form-control" id="description" name="description" value="{{$title['description']}}" required>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                     <div class="col-9">
                         <div class="mb-3">
                             <label for="Edicion" class="form-label">Edicion</label>
-                            <input type="text" class="form-control" id="edition" name="edition" value="{{$title['0']['edition']}}" required>
+                            <input type="text" class="form-control" id="edition" name="edition" value="{{$title['edition']}}" required>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                     <div class="col-9">
                         <div class="mb-3">
                             <label for="Version" class="form-label">Version</label>
-                            <input type="text" class="form-control" id="version" name="version" value="{{$title['0']['version']}}" required>
+                            <input type="text" class="form-control" id="version" name="version" value="{{$title['version']}}" required>
                         </div>
                     </div>
                 </div>
@@ -52,16 +52,16 @@
                     <div class="col-9">
                         <div class="mb-3">
                             <label for="Image" class="form-label">Image</label>
-                            <input type="file" class="form-control" id="image" name="image" value='{{$title['0']['image']}}' required>
+                            <input type="file" class="form-control" id="image" name="image" value='{{$title['image']}}' required>
                         </div>
                     </div>
-                    <a href="{{asset('storage/'.$title['0']['image'])}}">Descarga</a>
+                    <a href="{{asset('storage/'.$title['image'])}}">Descarga</a>
                 </div>
                 <div class="row invisible">
                     <div class="col-9">
                         <div class="mb-3">
                             <label for="Image" class="form-label">Image path</label>
-                            <input readonly type="text" class="form-control" id="imagepath" name="originalPath" value="{{$title['0']['image']}}" required>
+                            <input readonly type="text" class="form-control" id="imagepath" name="originalPath" value="{{$title['image']}}" required>
                         </div>
                     </div>
                 </div>

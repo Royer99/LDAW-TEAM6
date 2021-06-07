@@ -96,7 +96,14 @@ class TitleController extends Controller
      */
     public function show($id)
     {
-        //
+        $title=Title::getById($id);
+        $titlepath=explode("public/",$title['image']);
+        if(count($titlepath)>1){
+            $title['image']=$titlepath[1];
+        }else{
+            $title['image']=$title['image'];
+        }
+        return(view('editTitles',['title'=>$title]));
     }
 
     /**
@@ -107,14 +114,7 @@ class TitleController extends Controller
      */
     public function edit($id)
     {   
-        $title=Title::getById($id);
-        $titlepath=explode("public/",$title['0']['image']);
-        if(count($titlepath)>1){
-            $title[0]['image']=$titlepath[1];
-        }else{
-            $title['0']['image']=$title['0']['image'];
-        }
-        return(view('editTitles',['title'=>$title]));
+        
     }
 
     /**

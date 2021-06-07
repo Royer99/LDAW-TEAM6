@@ -25,7 +25,7 @@ class Title
     }
 
     public static function getById($id){
-        $response=Http::get('http://127.0.0.1:8001/api/title',['title'=>$id]);
+        $response=Http::get('http://127.0.0.1:8001/api/title/'.$id,['title'=>$id]);
         //dd($response->json());
         return $response->json();
     }

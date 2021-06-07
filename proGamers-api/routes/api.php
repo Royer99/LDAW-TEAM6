@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TitleController;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\PlatformController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource("title",TitleController::class);
+
+Route::apiResource("game",GameController::class);
+
+Route::get("platform",[PlatformController::class,'index']);

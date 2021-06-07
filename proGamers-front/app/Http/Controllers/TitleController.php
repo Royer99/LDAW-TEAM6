@@ -107,7 +107,7 @@ class TitleController extends Controller
      */
     public function edit($id)
     {
-        //
+        dd($id);
     }
 
     /**

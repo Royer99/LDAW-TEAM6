@@ -24,7 +24,7 @@
                     <p class="card-text">{{$titlex['description']}}</p>
                     <p>{{$titlex['edition']}}</p>
                     <p>{{$titlex['version']}}</p>
-                    <a href="#" class="btn btn-primary">detalle</a>
+                    <a href='{{route('title.edit',['title'=>$titlex['id']])}}' class="btn btn-primary">detalle</a>
                 </div>
             </div>
         </div>

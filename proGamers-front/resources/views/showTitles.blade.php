@@ -11,7 +11,7 @@
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="container-fluid">
             <h2>Visualizar titulo</h2>
-            <button class="btn btn-primary"><a href="{{route('title.edit',['title'=>$title['id']])}}">Editar</a></button>
+            <a href="{{route('title.edit',['title'=>$title['id']])}}"><button class="btn btn-primary">Editar</button></a>
             <br><br>
                 <div class="row">
                     <div class="col-9">

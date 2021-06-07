@@ -48,7 +48,7 @@ class TitleController extends Controller
      */
     public function show(Title $title)
     {
-        //
+        return $title;
     }
 
     /**

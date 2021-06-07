@@ -107,8 +107,9 @@ class TitleController extends Controller
      */
     public function edit($id)
     {   
-        //dd($id);
-        return(view('editTitles',['title'=>$id]));
+        $title=Title::getById($id);
+        //dd($title);
+        return(view('editTitles',['title'=>Title::getById($id)]));
     }
 
     /**

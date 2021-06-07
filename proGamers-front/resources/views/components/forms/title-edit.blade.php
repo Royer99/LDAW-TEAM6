@@ -1,4 +1,4 @@
-<form action='{{route('title.update',['title'=>$title])}}' enctype="multipart/form-data" method="post">
+<form action='{{route('title.update',['title'=>$title['id']])}}' enctype="multipart/form-data" method="post">
     @csrf
     <div class="row">
         <div class="col-9">

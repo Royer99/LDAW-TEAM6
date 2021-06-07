@@ -108,8 +108,13 @@ class TitleController extends Controller
     public function edit($id)
     {   
         $title=Title::getById($id);
-        //dd($title);
-        return(view('editTitles',['title'=>Title::getById($id)]));
+        $titlepath=explode("public/",$title['0']['image']);
+        if(count($titlepath)>1){
+            $title[0]['image']=$titlepath[1];
+        }else{
+            $title['0']['image']=$title['0']['image'];
+        }
+        return(view('editTitles',['title'=>$title]));
     }
 
     /**

@@ -56,6 +56,7 @@
                             <input type="file" class="form-control" id="image" name="image" required>
                         </div>
                     </div>
+                    <a href="{{asset('storage/'.$title['0']['image'])}}">Descarga</a>
                 </div>
                 <button id="next" class="btn btn-primary">Cancelar</button>
                 <button id="next" class="btn btn-primary">registrar</button>

@@ -48,7 +48,7 @@ class TitleController extends Controller
      */
     public function show(Title $title)
     {
-        //
+        return $title;
     }
 
     /**
@@ -60,7 +60,17 @@ class TitleController extends Controller
      */
     public function update(Request $request, Title $title)
     {
-        //
+        $title->title=$request->title['title'];
+        $title->description=$request->title['description'];
+        $title->edition=$request->title['edition'];
+        $title->version=$request->title['version'];
+        $title->image=$request->title['image'];
+        $title->save();
+        return response([
+            "id" => $title->id,
+            "success" => true,
+            "message" => "Se ha registrado el nuevo titulo correctamente."
+        ], 200);
     }
 
     /**

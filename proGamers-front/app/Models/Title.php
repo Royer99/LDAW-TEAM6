@@ -3,10 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
 
-class Title extends Model
+class Title
 {
     //use HasFactory;
 
@@ -23,5 +22,21 @@ class Title extends Model
     public static function getTitles(){
         $response=Http::get('http://127.0.0.1:8001/api/title');
         return $response->json();
+    }
+
+    public static function getById($id){
+        $response=Http::get('http://127.0.0.1:8001/api/title/'.$id,['title'=>$id]);
+        //dd($response->json());
+        return $response->json();
+    }
+
+    public static function update($id,$title){
+        //$token = session('token');
+        //env('API_URL').
+        $response=Http::patch('http://127.0.0.1:8001/api/title/'.$id,['title'=>$title]);
+        $wasSuccessful = ($response->status() == 200);
+        $message = $response->json()['message'];
+        return array($wasSuccessful, $message);
+
     }
 }

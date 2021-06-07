@@ -106,8 +106,9 @@ class TitleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        dd($id);
+    {   
+        //dd($id);
+        return(view('editTitles',['title'=>$id]));
     }
 
     /**

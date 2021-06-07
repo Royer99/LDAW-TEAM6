@@ -126,7 +126,43 @@ class TitleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator=Validator::make($request->all(),[
+            'title'=>'required|max:255',
+            'description'=>'required|max:255',
+            'edition'=>'required|max:255',
+            'version'=>'required|max:255',
+            'image'=>'required',
+            'originalPath'=>'required'
+         ]);
+         
+         if($validator->fails()){
+             return redirect('title/create')
+                     ->withErrors($validator)
+                     ->withInput();
+         }
+         
+         if($request->originalPath==$request->file('image')->getClientOriginalName()){
+            $imageUrl='public/'.$request->originalPath;
+         }else{
+            $imageUrl=$request->file('image')->storePublicly('public/TitleImage');
+         }
+         $titleData=["title"=>$request->title,
+                 "description"=>$request->description,
+                 "edition"=>$request->edition,
+                 "version"=>$request->version,
+                 "image"=>$imageUrl];
+         $title=Title::update($id,$titleData);    
+         $wasSuccessful = $title[0];
+         $message = $title[1];
+ 
+         if ($wasSuccessful) {
+             return redirect()->route('title.index')
+                     ->with('success', $message);
+         };
+ 
+         return redirect()->route('title.edit')
+             ->with('error', $message);
+ 
     }
 
     /**

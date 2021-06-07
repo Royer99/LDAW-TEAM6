@@ -1,6 +1,4 @@
 <html>
-<meta>
-<meta name="csrf-token" content="{{ csrf_token() }}" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 <link href="{{asset('/css/main.css')}}" rel="stylesheet">
 <body>
@@ -15,7 +13,8 @@
             <h2>Visualizar/Editar Titulo</h2>
             <br><br>
             <!--form-->
-            <form action='{{route('title.update',['title'=>$title['0']['id']])}}' enctype="multipart/form-data" method="PATCH">
+            <form action='{{route('title.update',['title'=>$title['0']['id']])}}' enctype="multipart/form-data" method="post">
+                {{ method_field('PATCH') }}
                 @csrf
                 <div class="row">
                     <div class="col-9">
@@ -49,14 +48,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row ">
                     <div class="col-9">
                         <div class="mb-3">
                             <label for="Image" class="form-label">Image</label>
-                            <input type="file" class="form-control" id="image" name="image" required>
+                            <input type="file" class="form-control" id="image" name="image" value='{{$title['0']['image']}}' required>
                         </div>
                     </div>
                     <a href="{{asset('storage/'.$title['0']['image'])}}">Descarga</a>
+                </div>
+                <div class="row invisible">
+                    <div class="col-9">
+                        <div class="mb-3">
+                            <label for="Image" class="form-label">Image path</label>
+                            <input readonly type="text" class="form-control" id="imagepath" name="originalPath" value="{{$title['0']['image']}}" required>
+                        </div>
+                    </div>
                 </div>
                 <button id="next" class="btn btn-primary">Cancelar</button>
                 <button id="next" class="btn btn-primary">registrar</button>

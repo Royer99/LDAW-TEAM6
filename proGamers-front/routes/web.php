@@ -15,9 +15,7 @@ use App\Http\Controllers\GameController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TitleController::class, "index"]);
 
 
 Route::resource('title',TitleController::class);

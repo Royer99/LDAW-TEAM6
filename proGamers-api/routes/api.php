@@ -23,6 +23,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource("title",TitleController::class);
 
+use App\Http\Controllers\AuthController;
+
+//Login de sanctum para devolver token
+Route::post("/login",[AuthController::class,"login"]);
+
+Route::post("/test",[AuthController::class,"test"]);
+
+//Devuelve el usuario
+Route::middleware('auth:sanctum')->get('/user',[AuthController::class,"getUser"]);
+
+//NOTE: logout de sanctum
+Route::middleware('auth:sanctum')->get("/logout",[AuthController::class,"logout"]);
+
 Route::apiResource("game",GameController::class);
 
 Route::get("platform",[PlatformController::class,'index']);

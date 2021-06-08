@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
                 'last_name'=>'Sanchez',
                 'last_name2'=>'Arreola',
                 'phone_number'=>'4611235678',
-                'email'=>'A01209404@itesm.mx',
+                'email'=>'A01209929@itesm.mx',
                 'password'=>Hash::make('12345'),
                 'role_id'=>'1'
             ],

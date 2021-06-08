@@ -4,15 +4,16 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePrivilegesRolesTable extends Migration{
+class CreatePrivilegesRolesTable extends Migration
+{
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up(){
+    public function up()
+    {
         Schema::create('privileges_roles', function (Blueprint $table) {
-
             $table->id();
 
             $table->foreignId("privilege_id")
@@ -27,7 +28,6 @@ class CreatePrivilegesRolesTable extends Migration{
 
             //Llave única compuesta
             $table->unique(["privilege_id","role_id"]);
-
         });
     }
 

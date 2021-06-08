@@ -22,12 +22,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             //$table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->foreignId('role_id')
-                ->nullable()//Debido a que ya existen usuarios en la BD
-                ->constrained()
-                ->onUpdate("cascade")
-                ->onDelete("cascade");
-
             $table->rememberToken();
             $table->timestamps();
         });

@@ -2,7 +2,10 @@
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><h3>ProGamers</h3></a>
     <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-        <a class="nav-link" href="#">Sign out</a>
-    </li>
+        <form  action="{{ route('logout') }}" method="POST" >
+            @csrf
+            <input type="submit"  value="Logout">
+        </form>    
+        </li>
     </ul>
 </nav>

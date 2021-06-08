@@ -14,7 +14,9 @@ use App\Http\Controllers\TitleController;
 |
 */
 
-Route::get('/', [TitleController::class, "index"]);
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 Route::resource('title',TitleController::class);

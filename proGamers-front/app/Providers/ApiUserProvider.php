@@ -62,6 +62,7 @@ class ApiUserProvider implements UserProvider{
                 $user->token = $data["token"];
                 //Recuperar los datos del usuario usando el token
                 $userData = User::requestUser($data["token"]);
+                
                 //Si el usuario existe
                 if(!empty($userData)){
                     return true;

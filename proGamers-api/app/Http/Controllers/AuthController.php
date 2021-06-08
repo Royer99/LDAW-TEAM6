@@ -44,8 +44,8 @@ class AuthController extends Controller{
         return [
             "email" => $user->email,
             "name" => $user->name,
-            "role" => $user->role->name,
-            "privileges" => $user->getPrivilegesList()
+            //"role" => $user->role->name,
+            //"privileges" => $user->getPrivilegesList()
         ];
 
     }

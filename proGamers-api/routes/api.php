@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TitleController;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\PlatformController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +36,6 @@ Route::middleware('auth:sanctum')->get('/user',[AuthController::class,"getUser"]
 //NOTE: logout de sanctum
 Route::middleware('auth:sanctum')->get("/logout",[AuthController::class,"logout"]);
 
+Route::apiResource("game",GameController::class);
+
+Route::get("platform",[PlatformController::class,'index']);

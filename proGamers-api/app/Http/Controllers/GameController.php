@@ -25,7 +25,17 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $game=new Game;
+        $game->title_id=$request->game['title_id'];
+        $game->user_id=$request->game['user_id'];
+        $game->platform_id=$request->game['platform_id'];
+        $game->description=$request->game['description'];
+        $game->save();
+        return response([
+            "id" => $game->id,
+            "success" => true,
+            "message" => "Se ha registrado el nuevo juego fisico correctamente."
+        ], 200);
     }
 
     /**

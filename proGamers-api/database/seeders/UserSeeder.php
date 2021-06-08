@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
                 'phone_number'=>'4611052365',
                 'email'=>'A01209400@itesm.mx',
                 'password'=>Hash::make('12345'),
-                'role_id'=>'1'
+                'remember_token'=>'fdasfhdjhflkjahx'
             ],
             [
                 'name'=>'Jorge Arturo',
@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
                 'phone_number'=>'4611235678',
                 'email'=>'A01209404@itesm.mx',
                 'password'=>Hash::make('12345'),
-                'role_id'=>'1'
+                'remember_token'=>'fdasfhdjhflkjahx'
             ],
             [
                 'name'=>'Erik',
@@ -42,7 +42,7 @@ class UserSeeder extends Seeder
                 'phone_number'=>'4612098975',
                 'email'=>'A01209405@itesm.mx',
                 'password'=>Hash::make('12345'),
-                'role_id'=>'1'
+                'remember_token'=>'fdasfhdjhflkjahx'
             ],
         ]);
     }

@@ -19,6 +19,9 @@ class DatabaseSeeder extends Seeder
             TitleSeeder::class,
             GameSeeder::class,
             BidSeeder::class,
+            RoleSeeder::class,
+            PrivilegeSeeder::Class,
+            Privileges_RolesSeeder::class
         ]);
     }
 }

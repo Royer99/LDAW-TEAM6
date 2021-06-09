@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
+     * @hideFromAPIDocumentation
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -19,10 +20,17 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @group User management
+     * User.store
+     * 
+     * 
+     * Este endpoint permite registart un nuevo usuario.
+     * 
+     * @response 200 
+     *       {"id" : "1",
+     *       "success" : "true",
+     *       "message" : "Se ha registrado el nuevo titulo correctamente."}
+     *  
      */
     public function store(Request $request)
     {
@@ -45,6 +53,7 @@ class UserController extends Controller
     }
 
     /**
+     * @hideFromAPIDocumentation
      * Display the specified resource.
      *
      * @param  int  $id
@@ -56,6 +65,7 @@ class UserController extends Controller
     }
 
     /**
+     * @hideFromAPIDocumentation
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -68,6 +78,7 @@ class UserController extends Controller
     }
 
     /**
+     * @hideFromAPIDocumentation
      * Remove the specified resource from storage.
      *
      * @param  int  $id

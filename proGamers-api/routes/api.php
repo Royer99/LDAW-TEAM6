@@ -6,7 +6,7 @@ use App\Http\Controllers\TitleController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\PlatformController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,19 +26,17 @@ Route::apiResource("title",TitleController::class);
 
 Route::apiResource("user",UserController::class);
 
-use App\Http\Controllers\AuthController;
-
 //Login de sanctum para devolver token
 Route::post("/login",[AuthController::class,"login"]);
 
-Route::post("/test",[AuthController::class,"test"]);
-
 //Devuelve el usuario
-Route::middleware('auth:sanctum')->get('/user',[AuthController::class,"getUser"]);
+Route::get('/user',[AuthController::class,"getUser"]);
 
 //NOTE: logout de sanctum
-Route::middleware('auth:sanctum')->get("/logout",[AuthController::class,"logout"]);
+Route::get("/logout",[AuthController::class,"logout"]);
 
-Route::middleware('auth:sanctum')->apiResource("game",GameController::class);
+Route::apiResource("game",GameController::class);
 
-Route::middleware('auth:sanctum')->get("platform",[PlatformController::class,'index']);
+Route::get("platform",[PlatformController::class,'index']);
+
+

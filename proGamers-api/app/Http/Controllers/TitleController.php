@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 class TitleController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * @group Title management
+     * Title.index
      *
+     * Este endpoint permite consultar todos los titulos registrados.
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -18,10 +20,25 @@ class TitleController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * @group Title management
+     * Title.store
+     * 
+     * Este endpoint permite registart un nuevo titulo.
+     * 
+     * 
+     * @param required title Example: Minecraft.
+     * @param required description Example: Minecraft es un juego multiplataforma de exploracion.
+     * @param required edition Example: Java.
+     * @param required versio Example: 3.4.
+     * @param required image Example: path.  
+     * 
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * 
+     * @response 200 
+     *       {"id" : "1",
+     *       "success" : "true",
+     *       "message" : "Se ha registrado el nuevo titulo correctamente."}
+     *  
      */
     public function store(Request $request)
     {
@@ -41,10 +58,23 @@ class TitleController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * @group Title management
+     * title.show
      *
+     * Este endpoint permite visualizar un titulo en especifico.
+     * 
      * @param  \App\Models\Title  $title
      * @return \Illuminate\Http\Response
+     * 
+     * @response 200 
+     *       {
+     *          "id":"1",
+     *          "title":"Minecraft",
+     *          "description":"Minecraft es un juego multiplataforma de exploracion",
+     *          "edition":"java",
+     *          "version":"2.3",
+     *          "image":"path"
+     *          }
      */
     public function show(Title $title)
     {
@@ -52,7 +82,8 @@ class TitleController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * @group Title management
+     * Update the specified title.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Title  $title
@@ -74,6 +105,7 @@ class TitleController extends Controller
     }
 
     /**
+     * @hideFromAPIDocumentation
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Title  $title

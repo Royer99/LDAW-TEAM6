@@ -21,17 +21,13 @@ endpoints:
     bodyParameters: []
     responses:
       -
-        status: 200
-        content: '[{"id":1,"description":"Xbox one"},{"id":2,"description":"PC"},{"id":3,"description":"Nintendo Switch"},{"id":4,"description":"PS5"}]'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control:
             - 'no-cache, private'
           content-type:
             - application/json
-          x-ratelimit-limit:
-            - 60
-          x-ratelimit-remaining:
-            - 52
           access-control-allow-origin:
             - '*'
         description: null

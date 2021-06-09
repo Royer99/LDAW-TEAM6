@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class GameController extends Controller
 {
@@ -41,12 +42,34 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'title_id' => 'required',
+            'user_id' => 'required',
+            'platform_id' => 'required',
+            'description' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response([
+                "id" => null,
+                "success" => false,
+                "message" => 'Los campos no cumplen las validaciones.'
+            ], 422);
+        }
         $game=new Game;
-        $game->title_id=$request->game['title_id'];
-        $game->user_id=$request->game['user_id'];
-        $game->platform_id=$request->game['platform_id'];
-        $game->description=$request->game['description'];
+        $game->title_id=$request->title_id;
+        $game->user_id=$request->user_id;
+        $game->platform_id=$request->platform_id;
+        $game->description=$request->description;
+        try {
         $game->save();
+        }catch(\Exception $e) {
+            return response([
+                'id' => null,
+                'success' => false,
+                'message' => "Hubo un error al crear el juego fisico."
+            ], 400);
+        }
         return response([
             "id" => $game->id,
             "success" => true,

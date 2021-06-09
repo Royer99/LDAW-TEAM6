@@ -52,7 +52,6 @@ class TitleController extends Controller
      */
     public function store(Request $request)
     {
-
         $validator=Validator::make($request->all(),[
            'title'=>'required|max:255',
            'description'=>'required|max:255',
@@ -61,19 +60,15 @@ class TitleController extends Controller
            'image'=>'required'
         ]);
         
+        
         if($validator->fails()){
             return redirect('title/create')
                     ->withErrors($validator)
                     ->withInput();
         }
-
+        
         $imageUrl=$request->file('image')->storePublicly('public/TitleImage');
-        $titleData=["title"=>$request->title,
-                "description"=>$request->description,
-                "edition"=>$request->edition,
-                "version"=>$request->version,
-                "image"=>$imageUrl];
-        $title=Title::insertTitle($titleData);    
+        $title=Title::insertTitle($request->title,$request->description,$request->edition,$request->version,$imageUrl);    
         
         $wasSuccessful = $title[0];
         $message = $title[1];
@@ -153,12 +148,8 @@ class TitleController extends Controller
          }else{
             $imageUrl=$request->file('image')->storePublicly('public/TitleImage');
          }
-         $titleData=["title"=>$request->title,
-                 "description"=>$request->description,
-                 "edition"=>$request->edition,
-                 "version"=>$request->version,
-                 "image"=>$imageUrl];
-         $title=Title::update($id,$titleData);    
+         
+         $title=Title::update($id,$request->title,$request->description,$request->edition,$request->version,$imageUrl);    
          $wasSuccessful = $title[0];
          $message = $title[1];
  

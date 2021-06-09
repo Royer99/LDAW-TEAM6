@@ -56,12 +56,8 @@ class GameController extends Controller
                      ->withErrors($validator)
                      ->withInput();
          }
- 
-         $gameData=["title_id"=>$request->title_id,
-                 "user_id"=>$request->user_id,
-                 "platform_id"=>$request->platform_id,
-                 "description"=>$request->description];
-         $game=Game::insertGame($gameData);    
+         
+         $game=Game::insertGame($request->title_id,$request->user_id,$request->platform_id,$request->description);    
          $wasSuccessful = $game[0];
          $message = $game[1];
  
@@ -70,7 +66,7 @@ class GameController extends Controller
                      ->with('success', $message);
          };
  
-         return redirect()->route('title.create')
+         return redirect()->route('game.create')
              ->with('error', $message);
     }
 

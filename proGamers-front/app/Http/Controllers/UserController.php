@@ -51,14 +51,8 @@ class UserController extends Controller
                      ->withErrors($validator)
                      ->withInput();
          }
- 
-         $UserData=["name"=>$request->name,
-                 "last_name"=>$request->last_name,
-                 "last_name2"=>$request->last_name2,
-                 "phone_number"=>$request->phone_number,
-                 "email"=>$request->email,
-                 "password"=>$request->password];
-         $user=User::insertUser($UserData);   
+         
+         $user=User::insertUser($request->name,$request->last_name,$request->last_name2,$request->phone_number,$request->email,$request->password);   
          $wasSuccessful = $user[0];
          $message = $user[1];
  
@@ -67,7 +61,7 @@ class UserController extends Controller
                      ->with('success', $message);
          };
  
-         return redirect()->route('title.create')
+         return redirect()->route('user.create')
              ->with('error', $message);
     }
 

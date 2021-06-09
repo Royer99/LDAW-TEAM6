@@ -189,7 +189,7 @@ fetch(url, {
 }).then(response =&gt; response.json());</code></pre>
 
             <blockquote>
-            <p>Example response (500):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary>
@@ -198,447 +198,13 @@ fetch(url, {
             <pre>
             <code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
 access-control-allow-origin: *
  </code>
             </pre>
         </details>         <pre>
                 <code class="language-json">
 {
-    &quot;message&quot;: &quot;Call to a member function tokens() on null&quot;,
-    &quot;exception&quot;: &quot;Error&quot;,
-    &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/app\/Http\/Controllers\/AuthController.php&quot;,
-    &quot;line&quot;: 87,
-    &quot;trace&quot;: [
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php&quot;,
-            &quot;line&quot;: 54,
-            &quot;function&quot;: &quot;logout&quot;,
-            &quot;class&quot;: &quot;App\\Http\\Controllers\\AuthController&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php&quot;,
-            &quot;line&quot;: 45,
-            &quot;function&quot;: &quot;callAction&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Controller&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php&quot;,
-            &quot;line&quot;: 254,
-            &quot;function&quot;: &quot;dispatch&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\ControllerDispatcher&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php&quot;,
-            &quot;line&quot;: 197,
-            &quot;function&quot;: &quot;runController&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php&quot;,
-            &quot;line&quot;: 695,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php&quot;,
-            &quot;line&quot;: 128,
-            &quot;function&quot;: &quot;Illuminate\\Routing\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php&quot;,
-            &quot;line&quot;: 50,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php&quot;,
-            &quot;line&quot;: 167,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\SubstituteBindings&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 127,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 103,
-            &quot;function&quot;: &quot;handleRequest&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 55,
-            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php&quot;,
-            &quot;line&quot;: 167,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php&quot;,
-            &quot;line&quot;: 103,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php&quot;,
-            &quot;line&quot;: 697,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php&quot;,
-            &quot;line&quot;: 672,
-            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php&quot;,
-            &quot;line&quot;: 636,
-            &quot;function&quot;: &quot;runRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php&quot;,
-            &quot;line&quot;: 625,
-            &quot;function&quot;: &quot;dispatchToRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php&quot;,
-            &quot;line&quot;: 166,
-            &quot;function&quot;: &quot;dispatch&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php&quot;,
-            &quot;line&quot;: 128,
-            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ConvertEmptyStringsToNull.php&quot;,
-            &quot;line&quot;: 31,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php&quot;,
-            &quot;line&quot;: 167,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TrimStrings.php&quot;,
-            &quot;line&quot;: 40,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php&quot;,
-            &quot;line&quot;: 167,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php&quot;,
-            &quot;line&quot;: 27,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php&quot;,
-            &quot;line&quot;: 167,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/PreventRequestsDuringMaintenance.php&quot;,
-            &quot;line&quot;: 86,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php&quot;,
-            &quot;line&quot;: 167,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/fruitcake\/laravel-cors\/src\/HandleCors.php&quot;,
-            &quot;line&quot;: 52,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php&quot;,
-            &quot;line&quot;: 167,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Fruitcake\\Cors\\HandleCors&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/fideloper\/proxy\/src\/TrustProxies.php&quot;,
-            &quot;line&quot;: 57,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php&quot;,
-            &quot;line&quot;: 167,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Fideloper\\Proxy\\TrustProxies&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php&quot;,
-            &quot;line&quot;: 103,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php&quot;,
-            &quot;line&quot;: 141,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php&quot;,
-            &quot;line&quot;: 110,
-            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php&quot;,
-            &quot;line&quot;: 287,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php&quot;,
-            &quot;line&quot;: 275,
-            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php&quot;,
-            &quot;line&quot;: 86,
-            &quot;function&quot;: &quot;makeApiCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php&quot;,
-            &quot;line&quot;: 44,
-            &quot;function&quot;: &quot;makeResponseCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php&quot;,
-            &quot;line&quot;: 34,
-            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Extractor.php&quot;,
-            &quot;line&quot;: 228,
-            &quot;function&quot;: &quot;__invoke&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Extractor.php&quot;,
-            &quot;line&quot;: 185,
-            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Extractor.php&quot;,
-            &quot;line&quot;: 119,
-            &quot;function&quot;: &quot;fetchResponses&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/knuckleswtf\/scribe\/src\/Commands\/GenerateDocumentation.php&quot;,
-            &quot;line&quot;: 111,
-            &quot;function&quot;: &quot;processRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/knuckleswtf\/scribe\/src\/Commands\/GenerateDocumentation.php&quot;,
-            &quot;line&quot;: 322,
-            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/knuckleswtf\/scribe\/src\/Commands\/GenerateDocumentation.php&quot;,
-            &quot;line&quot;: 56,
-            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php&quot;,
-            &quot;line&quot;: 36,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/Util.php&quot;,
-            &quot;line&quot;: 40,
-            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php&quot;,
-            &quot;line&quot;: 93,
-            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php&quot;,
-            &quot;line&quot;: 37,
-            &quot;function&quot;: &quot;callBoundMethod&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/Container.php&quot;,
-            &quot;line&quot;: 611,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php&quot;,
-            &quot;line&quot;: 136,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/symfony\/console\/Command\/Command.php&quot;,
-            &quot;line&quot;: 256,
-            &quot;function&quot;: &quot;execute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php&quot;,
-            &quot;line&quot;: 121,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/symfony\/console\/Application.php&quot;,
-            &quot;line&quot;: 971,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/symfony\/console\/Application.php&quot;,
-            &quot;line&quot;: 290,
-            &quot;function&quot;: &quot;doRunCommand&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/symfony\/console\/Application.php&quot;,
-            &quot;line&quot;: 166,
-            &quot;function&quot;: &quot;doRun&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Application.php&quot;,
-            &quot;line&quot;: 92,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Console\/Kernel.php&quot;,
-            &quot;line&quot;: 129,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;\/home\/royer\/Documents\/FJ2021\/LDAW-TEAM6\/proGamers-api\/artisan&quot;,
-            &quot;line&quot;: 37,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        }
-    ]
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
 }
  </code>
         </pre>
@@ -719,24 +285,23 @@ fetch(url, {
 }).then(response =&gt; response.json());</code></pre>
 
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary>
                 <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
             </summary>
             <pre>
-            <code class="language-http">content-type: text/html; charset=UTF-8
-cache-control: no-cache, private
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
+            <code class="language-http">cache-control: no-cache, private
+content-type: application/json
 access-control-allow-origin: *
  </code>
             </pre>
         </details>         <pre>
                 <code class="language-json">
-
-
+{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}
  </code>
         </pre>
     <div id="execution-results-GETapi-game" hidden>
@@ -790,11 +355,11 @@ Este endpoint permite registart un nuevo juego fisico.</h2>
 <blockquote>Example request:</blockquote>
 
 
-<pre><code class="language-bash">
-curl --request POST \
+<pre><code class="language-bash">curl --request POST \
     "http://localhost/api/game" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"```</code></pre>
+    --header "Accept: application/json" \
+    --data "{\"title_id\":\"quia\",\"user_id\":\"voluptatem\",\"platform_id\":\"veniam\",\"description\":\"ab\"}"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/game"
@@ -805,9 +370,17 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "title_id": "quia",
+    "user_id": "voluptatem",
+    "platform_id": "veniam",
+    "description": "ab"
+}
+
 fetch(url, {
     method: "POST",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre>
 
             <blockquote>
@@ -859,7 +432,29 @@ fetch(url, {
             <small class="badge badge-black">POST</small>
             <b><code>api/game</code></b>
         </p>
-                    </form>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>title_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="title_id" data-endpoint="POSTapi-game" data-component="body" required  hidden>
+<br>
+        </p>
+                <p>
+            <b><code>user_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="user_id" data-endpoint="POSTapi-game" data-component="body" required  hidden>
+<br>
+        </p>
+                <p>
+            <b><code>platform_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="platform_id" data-endpoint="POSTapi-game" data-component="body" required  hidden>
+<br>
+        </p>
+                <p>
+            <b><code>description</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="description" data-endpoint="POSTapi-game" data-component="body" required  hidden>
+<br>
+        </p>
+    
+    </form>
 
         <h1 id="platform-management">Platform management</h1>
     <p>
@@ -900,7 +495,7 @@ fetch(url, {
 }).then(response =&gt; response.json());</code></pre>
 
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary>
@@ -909,31 +504,14 @@ fetch(url, {
             <pre>
             <code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 52
 access-control-allow-origin: *
  </code>
             </pre>
         </details>         <pre>
                 <code class="language-json">
-[
-    {
-        &quot;id&quot;: 1,
-        &quot;description&quot;: &quot;Xbox one&quot;
-    },
-    {
-        &quot;id&quot;: 2,
-        &quot;description&quot;: &quot;PC&quot;
-    },
-    {
-        &quot;id&quot;: 3,
-        &quot;description&quot;: &quot;Nintendo Switch&quot;
-    },
-    {
-        &quot;id&quot;: 4,
-        &quot;description&quot;: &quot;PS5&quot;
-    }
-]
+{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}
  </code>
         </pre>
     <div id="execution-results-GETapi-platform" hidden>
@@ -1023,7 +601,7 @@ fetch(url, {
             <code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 59
 access-control-allow-origin: *
  </code>
             </pre>
@@ -1053,6 +631,54 @@ access-control-allow-origin: *
         &quot;edition&quot;: &quot;Java&quot;,
         &quot;version&quot;: &quot;1.0.6&quot;,
         &quot;image&quot;: &quot;N\/A&quot;
+    },
+    {
+        &quot;id&quot;: 4,
+        &quot;title&quot;: &quot;asdf&quot;,
+        &quot;description&quot;: &quot;asdf&quot;,
+        &quot;edition&quot;: &quot;asdf&quot;,
+        &quot;version&quot;: &quot;asdf&quot;,
+        &quot;image&quot;: &quot;asdf&quot;
+    },
+    {
+        &quot;id&quot;: 5,
+        &quot;title&quot;: &quot;asdf&quot;,
+        &quot;description&quot;: &quot;asdf&quot;,
+        &quot;edition&quot;: &quot;asdf&quot;,
+        &quot;version&quot;: &quot;asd&quot;,
+        &quot;image&quot;: &quot;public\/TitleImage\/Fc8ZKejA76IT3Pgcz74njucllYNcLz7M1RQpBTEp.jpg&quot;
+    },
+    {
+        &quot;id&quot;: 6,
+        &quot;title&quot;: &quot;Prueba1&quot;,
+        &quot;description&quot;: &quot;ASDF&quot;,
+        &quot;edition&quot;: &quot;SADFS&quot;,
+        &quot;version&quot;: &quot;ASDFG&quot;,
+        &quot;image&quot;: &quot;public\/TitleImage\/7pX8J1s76IJa2N8CdzL6bxGDpzhBQwTpTGpNL9GD.jpg&quot;
+    },
+    {
+        &quot;id&quot;: 7,
+        &quot;title&quot;: &quot;Prueba4&quot;,
+        &quot;description&quot;: &quot;asdf&quot;,
+        &quot;edition&quot;: &quot;sadf&quot;,
+        &quot;version&quot;: &quot;asdf&quot;,
+        &quot;image&quot;: &quot;public\/TitleImage\/7190UCzNX0DCQCYvlt1k7HgJamkEkV7g1gnUxYgt.jpg&quot;
+    },
+    {
+        &quot;id&quot;: 8,
+        &quot;title&quot;: &quot;Prueba7&quot;,
+        &quot;description&quot;: &quot;asdf&quot;,
+        &quot;edition&quot;: &quot;sdf&quot;,
+        &quot;version&quot;: &quot;asdf&quot;,
+        &quot;image&quot;: &quot;public\/TitleImage\/d1281VyxUMoS7EKucHvCX9C2ZEyDKbD0OZEzAmBg.jpg&quot;
+    },
+    {
+        &quot;id&quot;: 9,
+        &quot;title&quot;: &quot;MinecraftRata&quot;,
+        &quot;description&quot;: &quot;asdf&quot;,
+        &quot;edition&quot;: &quot;asdf&quot;,
+        &quot;version&quot;: &quot;asdf&quot;,
+        &quot;image&quot;: &quot;public\/TitleImage\/azzgrSPDyDAhrJtZK7U3yrlfQZQYtVZFdRrO3hkq.jpg&quot;
     }
 ]
  </code>
@@ -1108,11 +734,11 @@ Este endpoint permite registart un nuevo titulo.</h2>
 <blockquote>Example request:</blockquote>
 
 
-<pre><code class="language-bash">
-curl --request POST \
+<pre><code class="language-bash">curl --request POST \
     "http://localhost/api/title" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"```</code></pre>
+    --header "Accept: application/json" \
+    --data "{\"title\":\"in\",\"description\":\"nostrum\",\"edition\":\"molestiae\",\"version\":\"sit\",\"image\":\"ratione\"}"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/title"
@@ -1123,9 +749,18 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "title": "in",
+    "description": "nostrum",
+    "edition": "molestiae",
+    "version": "sit",
+    "image": "ratione"
+}
+
 fetch(url, {
     method: "POST",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre>
 
             <blockquote>
@@ -1177,7 +812,34 @@ fetch(url, {
             <small class="badge badge-black">POST</small>
             <b><code>api/title</code></b>
         </p>
-                    </form>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>title</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="title" data-endpoint="POSTapi-title" data-component="body" required  hidden>
+<br>
+        </p>
+                <p>
+            <b><code>description</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="description" data-endpoint="POSTapi-title" data-component="body" required  hidden>
+<br>
+        </p>
+                <p>
+            <b><code>edition</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="edition" data-endpoint="POSTapi-title" data-component="body" required  hidden>
+<br>
+        </p>
+                <p>
+            <b><code>version</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="version" data-endpoint="POSTapi-title" data-component="body" required  hidden>
+<br>
+        </p>
+                <p>
+            <b><code>image</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="image" data-endpoint="POSTapi-title" data-component="body" required  hidden>
+<br>
+        </p>
+    
+    </form>
 
             <h2 id="title-management-GETapi-title--title-">title.show
 
@@ -1193,12 +855,12 @@ Este endpoint permite visualizar un titulo en especifico.</h2>
 
 <pre><code class="language-bash">
 curl --request GET \
-    --get "http://localhost/api/title/3" \
+    --get "http://localhost/api/title/2" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"```</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/title/3"
+    "http://localhost/api/title/2"
 );
 
 let headers = {
@@ -1281,14 +943,14 @@ fetch(url, {
 <blockquote>Example request:</blockquote>
 
 
-<pre><code class="language-bash">
-curl --request PUT \
-    "http://localhost/api/title/16" \
+<pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/title/6" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"```</code></pre>
+    --header "Accept: application/json" \
+    --data "{\"title\":\"est\",\"description\":\"possimus\",\"edition\":\"odit\",\"version\":\"sed\",\"image\":\"molestiae\"}"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/title/16"
+    "http://localhost/api/title/6"
 );
 
 let headers = {
@@ -1296,9 +958,18 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "title": "est",
+    "description": "possimus",
+    "edition": "odit",
+    "version": "sed",
+    "image": "molestiae"
+}
+
 fetch(url, {
     method: "PUT",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre>
 
 <div id="execution-results-PUTapi-title--title-" hidden>
@@ -1348,7 +1019,34 @@ fetch(url, {
 <input type="number" name="title" data-endpoint="PUTapi-title--title-" data-component="url" required  hidden>
 <br>
             </p>
-                    </form>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>title</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="title" data-endpoint="PUTapi-title--title-" data-component="body" required  hidden>
+<br>
+        </p>
+                <p>
+            <b><code>description</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="description" data-endpoint="PUTapi-title--title-" data-component="body" required  hidden>
+<br>
+        </p>
+                <p>
+            <b><code>edition</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="edition" data-endpoint="PUTapi-title--title-" data-component="body" required  hidden>
+<br>
+        </p>
+                <p>
+            <b><code>version</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="version" data-endpoint="PUTapi-title--title-" data-component="body" required  hidden>
+<br>
+        </p>
+                <p>
+            <b><code>image</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="image" data-endpoint="PUTapi-title--title-" data-component="body" required  hidden>
+<br>
+        </p>
+    
+    </form>
 
         <h1 id="user-management">User management</h1>
     <p>

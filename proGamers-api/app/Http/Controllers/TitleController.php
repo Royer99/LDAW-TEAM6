@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Title;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TitleController extends Controller
 {
@@ -42,13 +43,39 @@ class TitleController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'description' => 'required',
+            'edition' => 'required',
+            'version' => 'required',
+            'image' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response([
+                "id" => null,
+                "success" => false,
+                "message" => 'Los campos no cumplen las validaciones.'
+            ], 422);
+        }
+
+        
         $title=new Title;
-        $title->title=$request->title['title'];
-        $title->description=$request->title['description'];
-        $title->edition=$request->title['edition'];
-        $title->version=$request->title['version'];
-        $title->image=$request->title['image'];
+        $title->title=$request->title;
+        $title->description=$request->description;
+        $title->edition=$request->edition;
+        $title->version=$request->version;
+        $title->image=$request->image;
+        try {
         $title->save();
+        }catch(\Exception $e) {
+            return response([
+                'id' => null,
+                'success' => false,
+                'message' => "Hubo un error al crear el titulo."
+            ], 400);
+        }
+
         return response([
             "id" => $title->id,
             "success" => true,
@@ -101,12 +128,38 @@ class TitleController extends Controller
      */
     public function update(Request $request, Title $title)
     {
-        $title->title=$request->title['title'];
-        $title->description=$request->title['description'];
-        $title->edition=$request->title['edition'];
-        $title->version=$request->title['version'];
-        $title->image=$request->title['image'];
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'description' => 'required',
+            'edition' => 'required',
+            'version' => 'required',
+            'image' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response([
+                "id" => null,
+                "success" => false,
+                "message" => 'Los campos no cumplen las validaciones.'
+            ], 422);
+        }
+
+        $title->title=$request->title;
+        $title->description=$request->description;
+        $title->edition=$request->edition;
+        $title->version=$request->version;
+        $title->image=$request->image;
+        
+        try {
         $title->save();
+        }catch(\Exception $e) {
+            return response([
+                'id' => null,
+                'success' => false,
+                'message' => "Hubo un error al crear el titulo."
+            ], 400);
+        }
+
         return response([
             "id" => $title->id,
             "success" => true,

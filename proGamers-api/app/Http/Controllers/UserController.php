@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -34,21 +35,44 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'last_name' => 'required',
+            'last_name2' => 'required',
+            'phone_number' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response([
+                "id" => null,
+                "success" => false,
+                "message" => 'Los campos no cumplen las validaciones.'
+            ], 422);
+        }
+
         $user=new user;
-        $user->name=$request->user['name'];
-        $user->last_name=$request->user['last_name'];
-        $user->last_name2=$request->user['last_name2'];
-        $user->phone_number=$request->user['phone_number'];
-        $user->email=$request->user['email'];
+        $user->name=$request->name;
+        $user->last_name=$request->last_name;
+        $user->last_name2=$request->last_name2;
+        $user->phone_number=$request->phone_number;
+        $user->email=$request->email;
         $user->role_id=2;
-        $user->password=hash::make($request->user['password']);
+        $user->password=hash::make($request->password);
+        try {
         $user->save();
-        
-        //return ($user);
+        }catch(\Exception $e) {
+            return response([
+                'id' => null,
+                'success' => false,
+                'message' => "Hubo un error al crear el usuario, Intente con otro correo."
+            ], 400);
+        }
         return response([
             "id" => $user->id,
             "success" => true,
-            "message" => "Se ha registrado el nuevo juego fisico correctamente."
+            "message" => "Se ha registrado el nuevo usuario correctamente."
         ], 200);
     }
 

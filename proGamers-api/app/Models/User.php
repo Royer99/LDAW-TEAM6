@@ -61,4 +61,6 @@ class User extends Authenticatable
 
     }
 
+    public $timestamps = false;
+
 }

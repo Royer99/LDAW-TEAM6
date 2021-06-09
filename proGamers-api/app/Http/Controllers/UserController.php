@@ -35,6 +35,7 @@ class UserController extends Controller
         $user->role_id=2;
         $user->password=hash::make($request->user['password']);
         $user->save();
+        
         return response([
             "id" => $user->id,
             "success" => true,

@@ -46,6 +46,7 @@ class UserController extends Controller
          ]);
          
          if($validator->fails()){
+             //dd('fallo');
              return redirect('user/create')
                      ->withErrors($validator)
                      ->withInput();
@@ -57,7 +58,7 @@ class UserController extends Controller
                  "phone_number"=>$request->phone_number,
                  "email"=>$request->email,
                  "password"=>$request->password];
-         $user=User::insertUser($UserData);    
+         $user=User::insertUser($UserData);   
          $wasSuccessful = $user[0];
          $message = $user[1];
  

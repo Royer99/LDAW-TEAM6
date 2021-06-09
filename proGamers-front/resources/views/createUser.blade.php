@@ -11,6 +11,7 @@
     <!--form-->
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="container-fluid">
+        @if (count($errors)>0) <div class="alert alert-danger" role="alert"> <ul> @foreach($errors->all() as $error) <li> {{$error}} </li> @endforeach </ul> </div> @endif 
             <h3>Registro Usuario</h3>
             <br><br>
             <form action='{{route('user.store')}}' enctype="multipart/form-data" method="post">
@@ -59,7 +60,7 @@
                     <div class="col-9">
                         <div class="mb-3">
                             <label for="Password" class="form-label">Password*</label>
-                            <input type="password" class="form-control" id="description" name="password	" required>
+                            <input type="password" class="form-control" id="description" name="password" required>
                         </div>
                     </div>
                 </div>

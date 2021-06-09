@@ -13,7 +13,7 @@ class Game
     use HasFactory;
     
     public static function insertGame($game){
-        $token = Auth::user()->token();
+        $token = Auth::user()->token;
         //env('API_URL').
         $response=Http::withToken($token)->post('http://127.0.0.1:8001/api/game',['game'=>$game]);
         $wasSuccessful = ($response->status() == 200);

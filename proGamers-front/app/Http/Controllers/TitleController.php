@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Title;
+use App\Models\Game;
 use Illuminate\Support\Facades\Validator;
 
 class TitleController extends Controller
@@ -92,13 +93,15 @@ class TitleController extends Controller
     public function show($id)
     {
         $title=Title::getById($id);
+        $games=Game::getGamesTitle($id);
+        //dd($games);
         $titlepath=explode("public/",$title['image']);
         if(count($titlepath)>1){
             $title['image']=$titlepath[1];
         }else{
             $title['image']=$title['image'];
         }
-        return(view('showTitles',['title'=>$title]));
+        return(view('showTitles',['title' => $title, 'games' => $games]));
     }
 
     /**

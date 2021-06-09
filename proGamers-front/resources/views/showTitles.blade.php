@@ -52,8 +52,34 @@
                             <img src="{{asset('storage/'.$title['image'])}}">
                         </div>
                     </div>
-                    
                 </div>
+
+            @if (!empty($games))
+                <div class="row ">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Plataforma</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($games as $game)
+                                <tr>
+                                    <td>{{$game['platform']}}</td>
+                                    <td>{{$game['user_name']}}</td>
+                                    <td>{{$game['description']}}</td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary">Ofertar!</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table
+                </div>
+            @endif
         </div>
     </main>
     </div>

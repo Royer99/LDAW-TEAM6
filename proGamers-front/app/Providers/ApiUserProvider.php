@@ -53,7 +53,6 @@ class ApiUserProvider implements UserProvider{
                             "password" => $credentials["password"],
                             "device_name" => "frontend"
                         ]);
-                        dd($response->body());
         if($response->successful()){
 
             $data = $response->json();

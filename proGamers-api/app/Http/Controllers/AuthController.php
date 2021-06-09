@@ -15,7 +15,17 @@ class AuthController extends Controller{
     function test(Request $request){
         return "weeeeee";
     }
-    //Login con sanctum
+    
+    /**
+     * @group Auth management
+     * Auth.login
+     * 
+     *
+     * Este endpoint permite autenticar a los usarios.
+     * 
+     * @response 200 
+     *       {"token" : "2|0WPiVJEofvAesg3VwkX99UOoMgaZoscX65XU44jJ"}
+     */
     function login(Request $request){
         $request->validate([
             'email' => 'required|email',
@@ -35,12 +45,24 @@ class AuthController extends Controller{
             ];
     }
 
-    //Devuelve el usuario autenticado
+    /**
+     * @group User management
+     * User.getUser
+     *
+     * 
+     * Este endpoint permite consultar los atributos del usuario logeado.
+     * 
+     * @response 200 
+     *       {"id" : "1",
+     *       "email" : "true",
+     *       "role" : "Se ha registrado el nuevo titulo correctamente.",
+     *       "privileges" : [1,2]}
+     *  
+     */
     public function getUser(Request $request){
 
         $user = $request->user();
 
-        //dd(1);
         return [
             "id" => $user->id,
             "email" => $user->email,
@@ -51,7 +73,15 @@ class AuthController extends Controller{
 
     }
 
-    //Logout con sanctum
+    /**
+     * @group Auth management
+     * Auth.logout
+     *
+     * 
+     * Este endpoint permite terminar las sesiones de un usuario logeado.
+     * 
+     *  
+     */
     function logout(Request $request){
         // Revoke all tokens...
         $request->user()->tokens()->delete();

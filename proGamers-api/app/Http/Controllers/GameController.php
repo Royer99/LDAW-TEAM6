@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 class GameController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * @group Game management
+     * Game.index
      *
+     * Este endpoint permite consultar todos los juegos fisicos registrados por usuario.
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -17,11 +19,25 @@ class GameController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
+   /**
+     * @group Game management
+     * Game.store
+     * 
+     * Este endpoint permite registart un nuevo juego fisico.
+     * 
+     * 
+     * @param required title_id Example: '1'.
+     * @param required user_id Example: '1'.
+     * @param required platform_id Example: '1'.
+     * @param required description Example: 'presenta pequenos defectos'. 
+     * 
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * 
+     * @response 200 
+     *       {"id" : "1",
+     *       "success" : "true",
+     *       "message" : "Se ha registrado el nuevo titulo correctamente."}
+     *  
      */
     public function store(Request $request)
     {
@@ -39,10 +55,24 @@ class GameController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * @hideFromAPIDocumentation
+     * @group Game management
+     * Game.show
      *
-     * @param  \App\Models\Game  $game
+     * 
+     * Este endpoint permite visualizar un juego fisico en especifico.
+     * 
+     * @param  \App\Models\Title  $title
      * @return \Illuminate\Http\Response
+     * 
+     * @response 200 
+     *       {
+     *          "id":"1",
+     *          "title_id": "1",
+     *          "user_id": "1",
+     *          "platform_id": "1",
+     *          "description": "presenta pequenos defectos."
+     *        }
      */
     public function show(Game $game)
     {
@@ -50,6 +80,7 @@ class GameController extends Controller
     }
 
     /**
+     * @hideFromAPIDocumentation
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -62,6 +93,7 @@ class GameController extends Controller
     }
 
     /**
+     * @hideFromAPIDocumentation
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Game  $game

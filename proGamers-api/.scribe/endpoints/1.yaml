@@ -1,0 +1,64 @@
+name: 'Game management'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/game
+    metadata:
+      title: |-
+        Game.index
+
+        Este endpoint permite consultar todos los juegos fisicos registrados por usuario.
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: ''
+        headers:
+          content-type:
+            - 'text/html; charset=UTF-8'
+          cache-control:
+            - 'no-cache, private'
+          x-ratelimit-limit:
+            - 60
+          x-ratelimit-remaining:
+            - 53
+          access-control-allow-origin:
+            - '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/game
+    metadata:
+      title: |-
+        Game.store
+
+        Este endpoint permite registart un nuevo juego fisico.
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {"id" : "1",
+                "success" : "true",
+                "message" : "Se ha registrado el nuevo titulo correctamente."}
+        headers: []
+        description: '200'
+    responseFields: []

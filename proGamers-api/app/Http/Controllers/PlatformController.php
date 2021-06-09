@@ -8,8 +8,11 @@ use Illuminate\Http\Request;
 class PlatformController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * @group Platform management
+     * Platform.index
      *
+     * 
+     * Este endpoint permite consultar todas las plataformas registrados.
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -19,6 +22,7 @@ class PlatformController extends Controller
     }
 
     /**
+     * @hideFromAPIDocumentation
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -30,6 +34,7 @@ class PlatformController extends Controller
     }
 
     /**
+     * @hideFromAPIDocumentation
      * Display the specified resource.
      *
      * @param  \App\Models\Platform  $platform
@@ -53,6 +58,7 @@ class PlatformController extends Controller
     }
 
     /**
+     * @hideFromAPIDocumentation
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Platform  $platform

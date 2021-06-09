@@ -1,0 +1,125 @@
+name: 'Title management'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/title
+    metadata:
+      title: |-
+        Title.index
+
+        Este endpoint permite consultar todos los titulos registrados.
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '[{"id":1,"title":"Minecraft","description":"Minecraft es un videojuego de construcci\u00f3n, de tipo \u00abmundo abierto\u00bb o sandbox creado originalmente por el sueco Markus Persson (conocido com\u00fanmente como \"Notch\"),2\u200b y posteriormente desarrollado por su empresa, Mojang Studios. ","edition":"Java","version":"1.0.6","image":"N\/A"},{"id":2,"title":"Minecraft","description":"Minecraft es un videojuego de construcci\u00f3n, de tipo \u00abmundo abierto\u00bb o sandbox creado originalmente por el sueco Markus Persson (conocido com\u00fanmente como \"Notch\"),2\u200b y posteriormente desarrollado por su empresa, Mojang Studios. ","edition":"Delux","version":"2.0.6","image":"N\/A"},{"id":3,"title":"\tHalo: Combat Evolved","description":"Halo: Combat Evolved, also known as Halo: CE, is a first-person shooter game developed by Bungie and published by Microsoft Game Studios.","edition":"Java","version":"1.0.6","image":"N\/A"}]'
+        headers:
+          cache-control:
+            - 'no-cache, private'
+          content-type:
+            - application/json
+          x-ratelimit-limit:
+            - 60
+          x-ratelimit-remaining:
+            - 55
+          access-control-allow-origin:
+            - '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/title
+    metadata:
+      title: |-
+        Title.store
+
+        Este endpoint permite registart un nuevo titulo.
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {"id" : "1",
+                "success" : "true",
+                "message" : "Se ha registrado el nuevo titulo correctamente."}
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/title/{title}'
+    metadata:
+      title: |-
+        title.show
+
+        Este endpoint permite visualizar un titulo en especifico.
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      title:
+        name: title
+        description: ''
+        required: true
+        example: 3
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+                   "id":"1",
+                   "title":"Minecraft",
+                   "description":"Minecraft es un juego multiplataforma de exploracion",
+                   "edition":"java",
+                   "version":"2.3",
+                   "image":"path"
+                   }
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/title/{title}'
+    metadata:
+      title: 'Update the specified title.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      title:
+        name: title
+        description: ''
+        required: true
+        example: 16
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []

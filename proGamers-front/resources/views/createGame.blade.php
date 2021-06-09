@@ -31,14 +31,6 @@
                 <div class="row">
                     <div class="col-9">
                         <div class="mb-3">
-                            <label for="Descripcion" class="form-label">user</label>
-                            <input type="text" class="form-control" id="description" name="user_id" value="1" >
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-9">
-                        <div class="mb-3">
                             <label for="Edicion" class="form-label">Plataforma</label>
                             <select class="form-control" id="title" name="platform_id" required>
                                 <option disable>selecciona una opcion</option>
@@ -57,6 +49,7 @@
                         </div>
                     </div>
                 </div>
+                <input readonly type="hidden" class="form-control" id="description" name="user_id" value="{{$user->id}}" >
                 <button id="next" class="btn btn-primary">registrar</button>
             </form>
         </div>

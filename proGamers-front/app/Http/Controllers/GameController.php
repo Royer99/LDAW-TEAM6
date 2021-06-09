@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use App\Models\Title;
 use App\Models\Platform;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class GameController extends Controller
 {
@@ -29,7 +31,9 @@ class GameController extends Controller
     {
         $titles=Title::getTitles();
         $platforms=Platform::getPlatforms();
-        return view('createGame',['titles'=>$titles,'platforms'=>$platforms]);
+        $token = Auth::user()->token;
+        $user=User::requestUser($token);
+        return view('createGame',['titles'=>$titles,'platforms'=>$platforms,'user'=>$user]);
     }
 
     /**

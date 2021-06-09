@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Title;
 use App\Models\Game;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class TitleController extends Controller
 {
@@ -42,7 +44,9 @@ class TitleController extends Controller
      */
     public function create()
     {
-        return view("registarTitulo");
+        $token = Auth::user()->token;
+        $user=User::requestUser($token);
+        return view("registarTitulo",["user" => $user]);
     }
 
     /**
@@ -92,6 +96,8 @@ class TitleController extends Controller
      */
     public function show($id)
     {
+        $token = Auth::user()->token;
+        $user=User::requestUser($token);
         $title=Title::getById($id);
         $games=Game::getGamesTitle($id);
         //dd($games);
@@ -101,7 +107,7 @@ class TitleController extends Controller
         }else{
             $title['image']=$title['image'];
         }
-        return(view('showTitles',['title' => $title, 'games' => $games]));
+        return(view('showTitles',['title' => $title, 'games' => $games, 'user' => $user]));
     }
 
     /**
@@ -112,6 +118,8 @@ class TitleController extends Controller
      */
     public function edit($id)
     {   
+        $token = Auth::user()->token;
+        $user=User::requestUser($token);
         $title=Title::getById($id);
         $titlepath=explode("public/",$title['image']);
         if(count($titlepath)>1){
@@ -119,7 +127,7 @@ class TitleController extends Controller
         }else{
             $title['image']=$title['image'];
         }
-        return(view('editTitles',['title'=>$title]));
+        return(view('editTitles',['title'=>$title,'user'=> $user]));
     }
 
     /**

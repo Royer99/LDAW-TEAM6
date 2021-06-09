@@ -22,7 +22,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource("title",TitleController::class);
+//Route::apiResource("title",TitleController::class);
+Route::get("/title", [TitleController::class, "index"]);
+Route::post("/title", [TitleController::class, "store"]);
+Route::get("/title/{title}", [TitleController::class, "show"]);
+Route::patch("/title/{title}", [TitleController::class, "update"]);
+
 
 Route::apiResource("user",UserController::class);
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\TitleController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\UserController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

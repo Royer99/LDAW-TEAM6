@@ -30,16 +30,18 @@ class GameTest extends TestCase
         parent::tearDown();
     }
 
-
+    
     public function testGameInsertIncorrectParameters(){
         $token = $this->postJson('api/login', [
             'email'=>'A01209400@itesm.mx',
             'password'=>'12345',
             "device_name"=> "royerxps"
         ])->json()["token"];
+        
         $response=$this->withToken($token)->post('/api/game',['game'=>'name','description'=>'lol']);
         $response->assertStatus(422);
     }
+    
 
     public function testGameInsertIncompleteParameters(){
         $token = $this->postJson('api/login', [

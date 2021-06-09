@@ -21,7 +21,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '[{"id":1,"title":"Minecraft","description":"Minecraft es un videojuego de construcci\u00f3n, de tipo \u00abmundo abierto\u00bb o sandbox creado originalmente por el sueco Markus Persson (conocido com\u00fanmente como \"Notch\"),2\u200b y posteriormente desarrollado por su empresa, Mojang Studios. ","edition":"Java","version":"1.0.6","image":"N\/A"},{"id":2,"title":"Minecraft","description":"Minecraft es un videojuego de construcci\u00f3n, de tipo \u00abmundo abierto\u00bb o sandbox creado originalmente por el sueco Markus Persson (conocido com\u00fanmente como \"Notch\"),2\u200b y posteriormente desarrollado por su empresa, Mojang Studios. ","edition":"Delux","version":"2.0.6","image":"N\/A"},{"id":3,"title":"\tHalo: Combat Evolved","description":"Halo: Combat Evolved, also known as Halo: CE, is a first-person shooter game developed by Bungie and published by Microsoft Game Studios.","edition":"Java","version":"1.0.6","image":"N\/A"}]'
+        content: '[{"id":1,"title":"Minecraft","description":"Minecraft es un videojuego de construcci\u00f3n, de tipo \u00abmundo abierto\u00bb o sandbox creado originalmente por el sueco Markus Persson (conocido com\u00fanmente como \"Notch\"),2\u200b y posteriormente desarrollado por su empresa, Mojang Studios. ","edition":"Java","version":"1.0.6","image":"N\/A"},{"id":2,"title":"Minecraft","description":"Minecraft es un videojuego de construcci\u00f3n, de tipo \u00abmundo abierto\u00bb o sandbox creado originalmente por el sueco Markus Persson (conocido com\u00fanmente como \"Notch\"),2\u200b y posteriormente desarrollado por su empresa, Mojang Studios. ","edition":"Delux","version":"2.0.6","image":"N\/A"},{"id":3,"title":"\tHalo: Combat Evolved","description":"Halo: Combat Evolved, also known as Halo: CE, is a first-person shooter game developed by Bungie and published by Microsoft Game Studios.","edition":"Java","version":"1.0.6","image":"N\/A"},{"id":4,"title":"asdf","description":"asdf","edition":"asdf","version":"asdf","image":"asdf"},{"id":5,"title":"asdf","description":"asdf","edition":"asdf","version":"asd","image":"public\/TitleImage\/Fc8ZKejA76IT3Pgcz74njucllYNcLz7M1RQpBTEp.jpg"},{"id":6,"title":"Prueba1","description":"ASDF","edition":"SADFS","version":"ASDFG","image":"public\/TitleImage\/7pX8J1s76IJa2N8CdzL6bxGDpzhBQwTpTGpNL9GD.jpg"},{"id":7,"title":"Prueba4","description":"asdf","edition":"sadf","version":"asdf","image":"public\/TitleImage\/7190UCzNX0DCQCYvlt1k7HgJamkEkV7g1gnUxYgt.jpg"},{"id":8,"title":"Prueba7","description":"asdf","edition":"sdf","version":"asdf","image":"public\/TitleImage\/d1281VyxUMoS7EKucHvCX9C2ZEyDKbD0OZEzAmBg.jpg"},{"id":9,"title":"MinecraftRata","description":"asdf","edition":"asdf","version":"asdf","image":"public\/TitleImage\/azzgrSPDyDAhrJtZK7U3yrlfQZQYtVZFdRrO3hkq.jpg"}]'
         headers:
           cache-control:
             - 'no-cache, private'
@@ -30,7 +30,7 @@ endpoints:
           x-ratelimit-limit:
             - 60
           x-ratelimit-remaining:
-            - 55
+            - 59
           access-control-allow-origin:
             - '*'
         description: null
@@ -51,7 +51,37 @@ endpoints:
       Accept: application/json
     urlParameters: []
     queryParameters: []
-    bodyParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: ''
+        required: true
+        example: in
+        type: string
+      description:
+        name: description
+        description: ''
+        required: true
+        example: nostrum
+        type: string
+      edition:
+        name: edition
+        description: ''
+        required: true
+        example: molestiae
+        type: string
+      version:
+        name: version
+        description: ''
+        required: true
+        example: sit
+        type: string
+      image:
+        name: image
+        description: ''
+        required: true
+        example: ratione
+        type: string
     responses:
       -
         status: 200
@@ -81,7 +111,7 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: 3
+        example: 2
         type: integer
     queryParameters: []
     bodyParameters: []
@@ -117,9 +147,39 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: 16
+        example: 6
         type: integer
     queryParameters: []
-    bodyParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: ''
+        required: true
+        example: est
+        type: string
+      description:
+        name: description
+        description: ''
+        required: true
+        example: possimus
+        type: string
+      edition:
+        name: edition
+        description: ''
+        required: true
+        example: odit
+        type: string
+      version:
+        name: version
+        description: ''
+        required: true
+        example: sed
+        type: string
+      image:
+        name: image
+        description: ''
+        required: true
+        example: molestiae
+        type: string
     responses: []
     responseFields: []

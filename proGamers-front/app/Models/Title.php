@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Database\Eloquent\Model;
 
 class Title
 {
@@ -26,7 +27,6 @@ class Title
 
     public static function getById($id){
         $response=Http::get('http://127.0.0.1:8001/api/title/'.$id,['title'=>$id]);
-        //dd($response->json());
         return $response->json();
     }
 
@@ -37,6 +37,6 @@ class Title
         $wasSuccessful = ($response->status() == 200);
         $message = $response->json()['message'];
         return array($wasSuccessful, $message);
-
     }
+
 }

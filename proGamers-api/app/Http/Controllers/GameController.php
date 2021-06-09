@@ -16,7 +16,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        return Game::all();
     }
 
    /**
@@ -102,5 +102,20 @@ class GameController extends Controller
     public function destroy(Game $game)
     {
         //
+    }
+
+    public function getGamesTitle($id){
+        $games = Game::where('games.title_id', $id)->get();
+        $gamesData = [];
+        foreach ($games as $game) {
+            $gamesData [] = [
+                "title_name" => $game->title->title,
+                "description" => $game->description,
+                "platform" => $game->platform->description,
+                "user_name" => $game->user->name
+            ];
+        }
+            
+        return $gamesData;
     }
 }

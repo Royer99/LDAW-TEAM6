@@ -29,6 +29,7 @@ Route::apiResource("user",UserController::class);
 //Login de sanctum para devolver token
 Route::post("/login",[AuthController::class,"login"]);
 
+Route::middleware('auth:sanctum')->get("/game/{id}",[GameController::class,"getGamesTitle"]);
 
 //Devuelve el usuario
 Route::middleware('auth:sanctum')->get('/user',[AuthController::class,"getUser"]);

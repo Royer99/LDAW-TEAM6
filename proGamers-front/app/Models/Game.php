@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Title;
 
 class Game
 {
@@ -19,6 +19,11 @@ class Game
         $wasSuccessful = ($response->status() == 200);
         $message = $response->json()['message'];
         return array($wasSuccessful, $message);
-
+    }
+    
+    public static function getGamesTitle($id){
+        $token = Auth::user()->token;
+        $response=Http::withToken($token)->get('http://127.0.0.1:8001/api/game/'.$id);
+        return $response->json();
     }
 }

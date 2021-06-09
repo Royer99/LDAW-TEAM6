@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use App\Models\Game;
 
 class Title extends Model
 {
@@ -17,4 +18,9 @@ class Title extends Model
         return($titles);
     }
 
+
+    public function games()
+    {
+        return $this->hasMany(Game::class);
+    }
 }

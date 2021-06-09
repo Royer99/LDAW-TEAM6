@@ -60,13 +60,13 @@ class TitleController extends Controller
            'image'=>'required'
         ]);
         
-        /*
+        
         if($validator->fails()){
             return redirect('title/create')
                     ->withErrors($validator)
                     ->withInput();
         }
-        */
+        
         $imageUrl=$request->file('image')->storePublicly('public/TitleImage');
         $title=Title::insertTitle($request->title,$request->description,$request->edition,$request->version,$imageUrl);    
         

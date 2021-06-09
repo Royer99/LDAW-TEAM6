@@ -14,7 +14,6 @@ class Title
         //env('API_URL').
         echo('front');
         $response=Http::post('http://127.0.0.1:8001/api/title',['title'=>$title,'description'=>$description,'edition'=>$edition,'version'=>$version,'image'=>$imageUrl]);
-        dd($response->json());
         $wasSuccessful = ($response->status() == 200);
         $message = $response->json()['message'];
         return array($wasSuccessful, $message);

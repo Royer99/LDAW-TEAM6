@@ -29,14 +29,15 @@ Route::apiResource("user",UserController::class);
 //Login de sanctum para devolver token
 Route::post("/login",[AuthController::class,"login"]);
 
+
 //Devuelve el usuario
-Route::get('/user',[AuthController::class,"getUser"]);
+Route::middleware('auth:sanctum')->get('/user',[AuthController::class,"getUser"]);
 
 //NOTE: logout de sanctum
-Route::get("/logout",[AuthController::class,"logout"]);
+Route::middleware('auth:sanctum')->get("/logout",[AuthController::class,"logout"]);
 
-Route::apiResource("game",GameController::class);
+Route::middleware('auth:sanctum')->apiResource("game",GameController::class);
 
-Route::get("platform",[PlatformController::class,'index']);
+Route::middleware('auth:sanctum')->get("platform",[PlatformController::class,'index']);
 
 

@@ -21,3 +21,22 @@ Route::get('/', [TitleController::class, "index"]);
 
 Route::resource('title',TitleController::class);
 Route::resource('game',GameController::class);
+
+use App\Model\User;
+use Illuminate\Support\Facades\Auth;
+
+Route::get("/logoutt",function(Request $request){
+
+    if(auth()->user()->revokeToken()){
+        //Hacer el logout
+        Auth::logout();
+        //Invalidar la sesión
+        session()->invalidate();
+        //Regenerar el token de la sesión
+        session()->regenerateToken();
+
+        return redirect('/login');
+
+    }
+
+})->name("logoutt");

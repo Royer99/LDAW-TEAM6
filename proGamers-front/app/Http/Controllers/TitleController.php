@@ -148,12 +148,8 @@ class TitleController extends Controller
          }else{
             $imageUrl=$request->file('image')->storePublicly('public/TitleImage');
          }
-         $titleData=["title"=>$request->title,
-                 "description"=>$request->description,
-                 "edition"=>$request->edition,
-                 "version"=>$request->version,
-                 "image"=>$imageUrl];
-         $title=Title::update($id,$titleData);    
+         
+         $title=Title::update($id,$request->title,$request->description,$request->edition,$request->version,$imageUrl);    
          $wasSuccessful = $title[0];
          $message = $title[1];
  

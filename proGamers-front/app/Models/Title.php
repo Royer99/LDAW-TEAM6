@@ -31,10 +31,10 @@ class Title
         return $response->json();
     }
 
-    public static function update($id,$title){
+    public static function update($id,$title,$description,$edition,$version,$imageUrl){
         //$token = session('token');
         //env('API_URL').
-        $response=Http::patch('http://127.0.0.1:8001/api/title/'.$id,['title'=>$title]);
+        $response=Http::patch('http://127.0.0.1:8001/api/title/'.$id,['title'=>$title,'description'=>$description,'edition'=>$edition,'version'=>$version,'image'=>$imageUrl]);
         $wasSuccessful = ($response->status() == 200);
         $message = $response->json()['message'];
         return array($wasSuccessful, $message);

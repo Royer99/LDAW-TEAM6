@@ -36,6 +36,6 @@ Route::middleware('auth:sanctum')->get('/user',[AuthController::class,"getUser"]
 //NOTE: logout de sanctum
 Route::middleware('auth:sanctum')->get("/logout",[AuthController::class,"logout"]);
 
-Route::apiResource("game",GameController::class);
+Route::middleware('auth:sanctum')->apiResource("game",GameController::class);
 
-Route::get("platform",[PlatformController::class,'index']);
+Route::middleware('auth:sanctum')->get("platform",[PlatformController::class,'index']);

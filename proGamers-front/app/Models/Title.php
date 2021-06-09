@@ -9,10 +9,12 @@ class Title
 {
     //use HasFactory;
 
-    public static function insertTitle($title){
+    public static function insertTitle($title,$description,$edition,$version,$imageUrl){
         //$token = session('token');
         //env('API_URL').
-        $response=Http::post('http://127.0.0.1:8001/api/title',['title'=>$title]);
+        echo('front');
+        $response=Http::post('http://127.0.0.1:8001/api/title',['title'=>$title,'description'=>$description,'edition'=>$edition,'version'=>$version,'image'=>$imageUrl]);
+        dd($response->json());
         $wasSuccessful = ($response->status() == 200);
         $message = $response->json()['message'];
         return array($wasSuccessful, $message);

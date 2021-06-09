@@ -100,4 +100,12 @@ class User implements Authenticatable{
         return null;
     }
 
+    public static function insertUser($user){
+        //env('API_URL').
+        $response=Http::post('http://localhost:8001/api/user',['user'=>$user]);
+        //dd($response->body());
+        $wasSuccessful = ($response->status() == 200);
+        $message = $response->json()['message'];
+        return array($wasSuccessful, $message);
+    }
 }

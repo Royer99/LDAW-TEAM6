@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TitleController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\PlatformController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource("title",TitleController::class);
+
+Route::apiResource("user",UserController::class);
 
 use App\Http\Controllers\AuthController;
 

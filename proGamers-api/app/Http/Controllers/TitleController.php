@@ -105,6 +105,16 @@ class TitleController extends Controller
      */
     public function show(Title $title)
     {
+        /*$videogames = $title->games;
+        foreach($title->games as $game){
+                $videogames = [
+                    "id" => $game->id,
+                    "title" => $game->title->,
+                    "platform" => $game->platform->description,
+                ];
+        }
+
+        $titleData = [$title, $videogames];*/
         return $title;
     }
 

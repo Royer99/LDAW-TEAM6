@@ -57,6 +57,7 @@ class User implements Authenticatable{
             $userData = $response->json();
             $user = new User;
 
+            $user->id = $userData["id"];
             $user->email = $userData["email"];
             $user->name = $userData["name"];
             $user->role = $userData["role"];

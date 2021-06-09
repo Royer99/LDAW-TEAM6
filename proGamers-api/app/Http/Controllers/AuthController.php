@@ -42,6 +42,7 @@ class AuthController extends Controller{
 
         //dd(1);
         return [
+            "id" => $user->id,
             "email" => $user->email,
             "name" => $user->name,
             "role" => $user->role->name,

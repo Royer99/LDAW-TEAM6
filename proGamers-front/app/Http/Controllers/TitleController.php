@@ -20,8 +20,6 @@ class TitleController extends Controller
     {   
         $titles=Title::getTitles();
         $titlesx=[];
-        $token = Auth::user()->token;
-        $user=User::requestUser($token);
         foreach($titles as $title){
             $titlex['id']=$title['id'];
             $titlex['title']=$title['title'];
@@ -36,7 +34,7 @@ class TitleController extends Controller
             }
             $titlesx[]=$titlex;
         }
-        return view("indexTitles",["titles"=>$titlesx, 'user' => $user]);
+        return view("indexTitles",["titles"=>$titlesx]);
     }
 
     /**
@@ -46,7 +44,9 @@ class TitleController extends Controller
      */
     public function create()
     {
-        return view("registarTitulo");
+        $token = Auth::user()->token;
+        $user=User::requestUser($token);
+        return view("registarTitulo",["user" => $user]);
     }
 
     /**
@@ -118,6 +118,8 @@ class TitleController extends Controller
      */
     public function edit($id)
     {   
+        $token = Auth::user()->token;
+        $user=User::requestUser($token);
         $title=Title::getById($id);
         $titlepath=explode("public/",$title['image']);
         if(count($titlepath)>1){
@@ -125,7 +127,7 @@ class TitleController extends Controller
         }else{
             $title['image']=$title['image'];
         }
-        return(view('editTitles',['title'=>$title]));
+        return(view('editTitles',['title'=>$title,'user'=> $user]));
     }
 
     /**

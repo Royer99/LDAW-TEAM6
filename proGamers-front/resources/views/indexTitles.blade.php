@@ -32,7 +32,6 @@
         </div>
         @endforeach
         </div>
-    @endif
     </main>
     </div>
     <!--scripts-->

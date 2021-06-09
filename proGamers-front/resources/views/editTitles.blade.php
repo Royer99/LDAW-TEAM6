@@ -9,6 +9,7 @@
     <x-sidebar/>
     
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    @if(in_array("show.title", $user->privileges))
         <div class="container-fluid">
             <h2>Visualizar/Editar Titulo</h2>
             <br><br>
@@ -69,6 +70,9 @@
                 <button id="next" class="btn btn-primary">registrar</button>
             </form>
         </div>
+    @else
+    <h3>Por favor hacer log in</h3>
+    @endif
     </main>
     </div>
     <!--scripts-->

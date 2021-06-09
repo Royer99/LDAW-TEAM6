@@ -104,6 +104,14 @@ class GameController extends Controller
         //
     }
 
+    /**
+     * @group Game management
+     * Game.getGamesTitle
+     *
+     * Este endpoint permite consultar todos los juegos fisicos relacionados a un título determinado.
+     * @return \Illuminate\Http\Response
+     */
+
     public function getGamesTitle($id){
         $games = Game::where('games.title_id', $id)->get();
         $gamesData = [];

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TitleController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ Route::get('/', [TitleController::class, "index"]);
 
 Route::resource('title',TitleController::class);
 Route::resource('game',GameController::class);
+Route::resource('user',UserController::class);
 
 use App\Model\User;
 use Illuminate\Support\Facades\Auth;

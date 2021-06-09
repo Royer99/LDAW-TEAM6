@@ -74,7 +74,6 @@ class TitleController extends Controller
                 'success' => false,
                 'message' => "Hubo un error al crear el titulo."
             ], 400);
-
         }
 
         return response([

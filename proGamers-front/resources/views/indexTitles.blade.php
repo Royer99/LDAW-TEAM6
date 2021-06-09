@@ -9,6 +9,7 @@
 <div class="container-fluid">
     <x-sidebar/>
     <!--form-->
+
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="container-fluid">
         <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -31,6 +32,7 @@
         </div>
         @endforeach
         </div>
+    @endif
     </main>
     </div>
     <!--scripts-->

@@ -7,8 +7,9 @@
     <!--sidebar-->
     <div class="container-fluid">
     <x-sidebar/>
-    
+
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        @if(in_array("show.title", $user->privileges))
         <div class="container-fluid">
             <h2>Visualizar titulo</h2>
             <a href="{{route('title.edit',['title'=>$title['id']])}}"><button class="btn btn-primary">Editar</button></a>
@@ -53,7 +54,6 @@
                         </div>
                     </div>
                 </div>
-
             @if (!empty($games))
                 <div class="row ">
                     <table class="table">
@@ -81,7 +81,13 @@
                 </div>
             @endif
         </div>
-    </main>
+    @else
+    <h3>Por favor hacer log in</h3>
+    @endif
+
+    </main>        
+
+
     </div>
     <!--scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

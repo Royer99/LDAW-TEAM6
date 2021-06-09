@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Title;
 use App\Models\Game;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class TitleController extends Controller
 {
@@ -18,6 +20,8 @@ class TitleController extends Controller
     {   
         $titles=Title::getTitles();
         $titlesx=[];
+        $token = Auth::user()->token;
+        $user=User::requestUser($token);
         foreach($titles as $title){
             $titlex['id']=$title['id'];
             $titlex['title']=$title['title'];
@@ -32,7 +36,7 @@ class TitleController extends Controller
             }
             $titlesx[]=$titlex;
         }
-        return view("indexTitles",["titles"=>$titlesx]);
+        return view("indexTitles",["titles"=>$titlesx, 'user' => $user]);
     }
 
     /**
@@ -92,6 +96,8 @@ class TitleController extends Controller
      */
     public function show($id)
     {
+        $token = Auth::user()->token;
+        $user=User::requestUser($token);
         $title=Title::getById($id);
         $games=Game::getGamesTitle($id);
         //dd($games);
@@ -101,7 +107,7 @@ class TitleController extends Controller
         }else{
             $title['image']=$title['image'];
         }
-        return(view('showTitles',['title' => $title, 'games' => $games]));
+        return(view('showTitles',['title' => $title, 'games' => $games, 'user' => $user]));
     }
 
     /**

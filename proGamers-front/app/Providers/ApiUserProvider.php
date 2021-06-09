@@ -48,11 +48,12 @@ class ApiUserProvider implements UserProvider{
 
         //Hacer la petición para recuperar el token al backend (sanctum/API)
         $response = HTTP::timeout(env("API_TIMEOUT"))
-                        ->post(api_route("login"), [
+                        ->post(api_route("test"), [
                             "email" => $credentials["email"],
                             "password" => $credentials["password"],
                             "device_name" => "frontend"
                         ]);
+                        dd($response->body());
         if($response->successful()){
 
             $data = $response->json();

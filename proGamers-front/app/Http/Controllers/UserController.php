@@ -53,8 +53,8 @@ class UserController extends Controller
          }
  
          $UserData=["name"=>$request->name,
-                 "last_name"=>$request->user_id,
-                 "last_name2"=>$request->platform_id,
+                 "last_name"=>$request->last_name,
+                 "last_name2"=>$request->last_name2,
                  "phone_number"=>$request->phone_number,
                  "email"=>$request->email,
                  "password"=>$request->password];
